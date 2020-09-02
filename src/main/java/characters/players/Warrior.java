@@ -1,10 +1,11 @@
 package characters.players;
 
+import behaviours.IAttack;
 import characters.players.types.WeaponType;
 
 import java.util.Random;
 
-public abstract class Warrior extends Player{
+public abstract class Warrior extends Player implements IAttack {
 
     private WeaponType weapon;
 

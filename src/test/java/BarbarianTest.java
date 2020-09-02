@@ -1,3 +1,4 @@
+import characters.enemies.Troll;
 import characters.players.Barbarian;
 import characters.players.types.WeaponType;
 import environment.TreasureType;
@@ -10,11 +11,13 @@ public class BarbarianTest {
 
     Barbarian barbarian;
     TreasureType treasureType;
+    Troll troll;
 
     @Before
     public void before() {
         barbarian = new Barbarian(WeaponType.SWORD);
         treasureType = TreasureType.DIAMOND;
+        troll = new Troll();
     }
 
     @Test
@@ -43,9 +46,15 @@ public class BarbarianTest {
         assertEquals(false, barbarian.isDead());
     }
 
+//    @Test
+//    public void canGetRandomNumber() {
+//        assertEquals(0, barbarian.getInflictDamage());
+//    }
+
     @Test
-    public void canGetRandomNumber() {
-        assertEquals(0, barbarian.getInflictDamage());
+    public void canFight() {
+        barbarian.fight(troll);
+        assertEquals(true, troll.hasBeenHit());
     }
 
 }

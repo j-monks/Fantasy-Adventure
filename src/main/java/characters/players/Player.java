@@ -33,6 +33,6 @@ public abstract class Player {
     }
 
     public boolean isDead() {
-        return this.currentHealth == 0;
+        return this.currentHealth <= 0;
     }
 }
