@@ -1,4 +1,5 @@
 import characters.players.Barbarian;
+import characters.players.types.WeaponType;
 import environment.TreasureType;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +13,7 @@ public class BarbarianTest {
 
     @Before
     public void before() {
-        barbarian = new Barbarian();
+        barbarian = new Barbarian(WeaponType.SWORD);
         treasureType = TreasureType.DIAMOND;
     }
 
@@ -40,6 +41,11 @@ public class BarbarianTest {
     @Test
     public void isNotDead() {
         assertEquals(false, barbarian.isDead());
+    }
+
+    @Test
+    public void canGetRandomNumber() {
+        assertEquals(0, barbarian.getInflictDamage());
     }
 
 }
