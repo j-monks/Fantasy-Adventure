@@ -36,5 +36,12 @@ public class TrollTest {
 //        assertEquals(true, troll.isDead());
 //    }
 
+    @Test
+    public void canRetaliate() {
+        barbarian.fight(troll);
+        troll.retaliate(barbarian);
+        assertEquals(true, barbarian.hasBeenHit());
+    }
+
 
 }

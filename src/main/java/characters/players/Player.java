@@ -35,4 +35,16 @@ public abstract class Player {
     public boolean isDead() {
         return this.currentHealth <= 0;
     }
+
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
+    }
+
+    public boolean hasBeenHit() {
+        if (this.currentHealth != 100) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
